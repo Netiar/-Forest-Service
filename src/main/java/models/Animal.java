@@ -1,8 +1,9 @@
 package models;
 
 import java.util.Date;
+import java.util.Objects;
 
-public class Animals implements dao.Animals {
+public class Animal  {
     private int id;
     private String animalName;
     private String animalType;
@@ -21,7 +22,7 @@ public class Animals implements dao.Animals {
 
     private Date createdAt;
 
-    public Animals(String animalName, String animalType, String age, String health, int createdBy, Date createdAt) {
+    public Animal(String animalName, String animalType, String age, String health, int createdBy, Date createdAt) {
         this.animalName = animalName;
         this.animalType = animalType;
         this.age = age;
@@ -34,11 +35,14 @@ public class Animals implements dao.Animals {
     public boolean equals(Object o) {
         if (this == o) return true;
         if( o == null || getClass() != o.getClass()) return false;
-        Animals animals = (Animals) o;
-        return id == animals.id && createdBy == animals.createdBy && createdAt.equals(animals.createdAt) && animalName.equals(animals.animalName) && animalType.equals(animals.animalType) && age.equals(animals.age) && health.equals(animals.health);
+        Animal animal = (Animal) o;
+        return id == animal.id && createdBy == animal.createdBy && createdAt.equals(animal.createdAt) && animalName.equals(animal.animalName) && animalType.equals(animal.animalType) && age.equals(animal.age) && health.equals(animal.health);
 
     }
-     @Override
+
+    @Override
+    public int hashCode() {return Objects.hash(animalName, age, animalType, health); }
+
     public int getId() {
         return id;
     }
@@ -60,4 +64,8 @@ public class Animals implements dao.Animals {
     }
 
 
+    public void setId(int id) {
+        this.id = id;
+    }
 }
+
