@@ -24,7 +24,8 @@ public interface AnimalDao {
     //Delete all animals
     void deleteAllAnimals();
 
-    void deleteAllHeros();
+    // Update an animal
+    void updateAnimal(Animal animal);
 
-    int getId();
+
 }
