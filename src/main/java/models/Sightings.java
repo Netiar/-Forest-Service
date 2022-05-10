@@ -1,6 +1,5 @@
 package models;
 
-import java.util.Date;
 import java.util.Objects;
 
 public class Sightings {
@@ -8,23 +7,23 @@ public class Sightings {
     private String endangeredAnimal;
     private String location;
     private String rangerName;
-    private Date date;
+    private Integer date;
 
 
     public int getCreatedBy() {
         return createdBy;
     }
 
-    public Date getCreatedAt() {
+    public int getCreatedAt() {
         return createdAt;
     }
 
     private int createdBy;
 
-    private Date createdAt;
+    private int createdAt;
 
-    public Sightings(String animalId, String endangeredAnimal, String location, String rangerName, Date createdAt) {
-        this.animalId = Integer.parseInt(animalId);
+    public Sightings(Integer animalId, String endangeredAnimal, String location, String rangerName, int createdAt) {
+        this.animalId = animalId;
         this.endangeredAnimal = endangeredAnimal;
         this.location = location;
         this.rangerName = rangerName;
@@ -43,6 +42,28 @@ public class Sightings {
 
     @Override
     public int hashCode() {return Objects.hash(animalId,endangeredAnimal ,location , rangerName, createdAt ); }
+
+    public int getAnimalId() {
+        return animalId;
+    }
+
+    public String getEndangeredAnimal() {
+        return endangeredAnimal;
+    }
+
+
+
+    public String getLocation() {
+        return location;
+    }
+
+    public String getRangerName() {
+        return rangerName;
+    }
+
+    public Integer getDate() {
+        return date;
+    }
 
 
     public void setId(int id) {
