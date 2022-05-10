@@ -45,6 +45,8 @@ public class Sightings {
     public int hashCode() {return Objects.hash(animalId,endangeredAnimal ,location , rangerName, createdAt ); }
 
 
+    public void setId(int id) {
+    }
 }
 
 
