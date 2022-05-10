@@ -10,7 +10,7 @@ public interface SightingsDao {
     List<Sightings> getAllSightings();
 
     //create
-    void addSightings( Sightings sightings);
+    List<Sightings> addSightings(Sightings sightings);
 
     //find by id
     Sightings findSightingsById(int id);
@@ -22,7 +22,10 @@ public interface SightingsDao {
     List<Sightings> getSightingsByDate(String date);
 
     //get all endangered species
-    List<Sightings> getEndangeredSpecies();
+    List<Sightings> getEndangeredAnimal();
+
+    //get all endangered rangers by name
+    List<Sightings> getEndangeredRangersByName(String name);
 
     //delete sightings by id
     void deleteSightingsById(String id);
