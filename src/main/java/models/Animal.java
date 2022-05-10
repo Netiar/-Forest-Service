@@ -1,6 +1,5 @@
 package models;
 
-import java.util.Date;
 import java.util.Objects;
 
 public class Animal  {
@@ -10,19 +9,19 @@ public class Animal  {
     private String age;
     private String health;
 
-    public int getCreatedBy() {
+    public String getCreatedBy() {
         return createdBy;
     }
 
-    public Date getCreatedAt() {
+    public String getCreatedAt() {
         return createdAt;
     }
 
-    private int createdBy;
+    private String createdBy;
 
-    private Date createdAt;
+    private String createdAt;
 
-    public Animal(String animalName, String animalType, String age, String health, int createdBy, Date createdAt) {
+    public Animal(String animalName, String animalType, String age, String health, String createdBy, String createdAt) {
         this.animalName = animalName;
         this.animalType = animalType;
         this.age = age;
@@ -39,10 +38,10 @@ public class Animal  {
         return id == animal.id && createdBy == animal.createdBy && createdAt.equals(animal.createdAt) && animalName.equals(animal.animalName) && animalType.equals(animal.animalType) && age.equals(animal.age) && health.equals(animal.health);
 
     }
-
+    
     @Override
     public int hashCode() {return Objects.hash(animalName, age, animalType, health); }
-
+    
     public int getId() {
         return id;
     }
