@@ -1,19 +1,33 @@
 package dao;
 
+import models.Animal;
 import models.Sightings;
 
 import java.util.List;
 
 public interface SightingsDao {
 
+
+
     //list all sightings
-    List<Sightings> getAllSightings();
+    static List<Sightings> getAllSightings() {
+        return null;
+    }
+
+    static List<Animal> getAnimalIdsBySightings(int sightingsToFindId, Object animalType) {
+        return null;
+    }
+
+
+
 
     //create
     List<Sightings> addSightings(Sightings sightings);
 
     //find by id
-    Sightings findSightingsById(int id);
+    static Sightings findSightingsById(int id) {
+        return null;
+    }
 
     //get all sightings by location
     List<Sightings> getSightingsByLocation(String location);
@@ -28,7 +42,9 @@ public interface SightingsDao {
     List<Sightings> getEndangeredRangersByName(String name);
 
     //delete sightings by id
-    void deleteSightingsById(String id);
+    static void deleteSightingsById(String id, int idOfSightingsToDelete) {
+
+    }
 
     //delete all sightings
     void deleteAllSightings();

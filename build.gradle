@@ -12,6 +12,8 @@ repositories {
     mavenCentral()
 }
 
+mainClassName = "App"
+
 ext {
     junitVersion = '5.8.2'
 }
