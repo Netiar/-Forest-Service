@@ -14,7 +14,7 @@ ProcessBuilder processBuilder = new ProcessBuilder();
     if (processBuilder.environment().get("PORT") != null) {
         return Integer.parseInt(processBuilder.environment().get("PORT"));
     }
-    return 4567; //return default port if heroku-port isn't set (i.e. on localhost)
+    return 4567;
 }
     public static void main(String[] args) {
         port(getHerokuAssignedPort());
@@ -22,18 +22,18 @@ ProcessBuilder processBuilder = new ProcessBuilder();
 
 
         get("/", (request, response) -> {
-            Map<String, Object> model = new HashMap<String, Object>();
+            Map<String, Object> model = new HashMap<>();
             return new ModelAndView(model, "index.hbs");
         }, new HandlebarsTemplateEngine());
 
         get("/animal", (request, response) -> {
-            Map<String, Object> model = new HashMap<String, Object>();
+            Map<String, Object> model = new HashMap<>();
             model.put("Animal", Animal.getAnimals());
             return new ModelAndView(model, "animal.hbs");
         }, new HandlebarsTemplateEngine());
 
         post("/create/animal/new", (request, response) -> {
-            Map<String, Object> model = new HashMap<>();
+            Map<String, Object> model= new HashMap<>();
             int id = Integer.parseInt(request.queryParams("id"));
             String animalName = request.queryParams("animalName");
             String animalType = request.queryParams("animalType");
@@ -63,7 +63,7 @@ ProcessBuilder processBuilder = new ProcessBuilder();
         }, new HandlebarsTemplateEngine());
 
         get("/sightings", (request, response) -> {
-            Map<String, Object> model = new HashMap<String, Object>();
+            Map<String, Object> model = new HashMap<>();
             List Sightings = models.Sightings.getAll();
             model.put("sightings", Sightings);
             return new ModelAndView(model, "sightings.hbs");
