@@ -9,6 +9,7 @@ import java.util.List;
 
 public class sql2oSightingsDao implements SightingsDao {
 
+
     private final Sql2o sql2o;
 
     public void getDrivers(){

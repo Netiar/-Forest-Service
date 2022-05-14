@@ -31,37 +31,8 @@ public interface AnimalDao {
     // list animals
     List<Animal> findAnimal();
 
-    // Create a new animal
 
 
-//    static void addAnimal(Animal animal) {
-//        animal.add(animal);
-//    }
-//
-//    void addAnimal(Animal animal);
-//
-//    // get a specific animal
-//    static Animal findAnimalById(int id) {
-//        return null;
-//    }
-//
-//    Animal findAnimalById(int id);
-//
-//    // Delete an animal
-//    static void deleteAnimalById(int id);
-//
-//
-//    void deleteAnimalById(int id);
-//
-//    //Delete all animals
-//    static void deleteAllAnimals() {
-//        return null;
-//    }
-//
-//    void deleteAllAnimals();
-//
-//    // Update an animal
-//    void updateAnimal(Animal animal);
-//
+
 
 }

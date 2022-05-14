@@ -9,7 +9,8 @@ import java.util.List;
 
 public class sql2oAnimalDao implements AnimalDao{
 
-    private final Sql2o sql2o;
+
+    public Sql2o sql2o;
 
     public void getDrivers(){
         try{

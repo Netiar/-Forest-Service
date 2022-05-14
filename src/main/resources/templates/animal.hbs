@@ -1,53 +1,69 @@
 {{#partial "styles"}}
-    <link rel="stylesheet" href="/form.css">
+    <link rel="stylesheet" href="/css/index.css">
+
 {{/partial}}
 
 {{#partial "content"}}
-    <div class="container mt-5 offset-sm-2 pt-3 pb-3">
-        <h2 class="mb-5 mt-3">Animal Sighting</h2>
-        <form action="/sightings" method="POST">
-            <div class="mb-3 mt-3">
-                <label for="name" class="col-sm-2 col-form-label">Animal Name</label>
-                <input type="text" class="form-control w-50" id="animal" name="animal">
+    <div class="container">
+        <h2 class="title1"> Add Animal </h2>
+        <form action="/create/animal/new" method="POST" required>
+            <div class="title2">
+                <label for="name" class="form-label">Animal Name</label>
+                <input type="text" class="form-label33" id="animal" name="animal">
             </div>
-            <div class="mb-3">
-                <label for="ranger" class="col-sm-2 col-form-label">Ranger's Name</label>
-                <input type="text" class="form-control w-50" id="ranger" name="ranger">
+            <div class="title2">
+                <label for="ranger" class="form-label"> Animal Type</label>
+                <input type="text" class="form-label33" id="type" name="type">
 
             </div>
 
-            <div class="row mb-3">
-                <label for="location" class="form-label">Location</label>
-                <select id="location" name="location" class="form-select w-50">
-                    <option value="North">Zone A</option>
-                    <option value="South">Near the River</option>
-                    <option value="East">ZNE Quadrant</option>
+            <div class="title2">
+                <label for="age" class="form-label1">age</label>
+                <select id="age" name="age" class="form-label3">
+                    <option value="newborn">New-Born</option>
+                    <option value="young">Young</option>
+                    <option value="old">Old</option>
                 </select>
             </div>
-            <div class="row mb-3">
-                <label for="health" class="form-label">Health</label>
-                <select id="health" name="health" class="form-select w-50">
+            <div class="">
+                <label for="health" class="form-label1">Health</label>
+                <select id="health" name="health" class="form-label3">
                     <option value="healthy">Healthy</option>
                     <option value="ill">Ill</option>
                     <option value="okay">Okay</option>
                 </select>
             </div>
-            <div class="row mb-3">
-                <label for="age" class="form-label">Age</label>
-                <select id="age" name="age" class="form-select w-50">
-                    <option value="newborn">Newborn</option>
-                    <option value="young">Young</option>
-                    <option value="adult">Adult</option>
+
+            <h2 class="title1"> Add Sightings</h2>
+
+            <div class="title2">
+                <label for="name" class="form-label">Ranger Name</label>
+                <input type="text" class="form-label33" id=ranger" name="ranger">
+            </div>
+            <div class="title2">
+                <label for="animalId" class="form-label2"> Animal-Id</label>
+                <input type="number" class="form-label33" id="type" name="type">
+
+            </div>
+
+            <div class="title2">
+                <label for="location" class="form-label1">location</label>
+                <select id="location" name="location" class="form-label3">
+                    <option value="zoneA">zoneA</option>
+                    <option value="zoneB">zoneB</option>
+                    <option value="zoneC">zoneC</option>
                 </select>
             </div>
-            <div class="row mb-3">
-                <label for="type" class="form-label">Animal Type</label>
-                <select id="type" name="type" class="form-select w-50">
-                    <option value="animal">Animal</option>
-                    <option value="endangered">Endangered Animal</option>
+            <div class="title2">
+                <label for="endangeredAnimal" class="form-label1">Endangered</label>
+                <select id="endangered" name="endangered" class="form-label3">
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
                 </select>
             </div>
-            <button type="submit" class="btn btn-default mt-2">Submit</button>
+
+
+            <a href="/sightings"> <button type="submit" class="btn btn-default mt-5" style="background-color:gray; color:black; margin-left:2vw;">Submit</button></a>
         </form>
 
     </div>

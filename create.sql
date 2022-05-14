@@ -9,8 +9,8 @@ CREATE TABLE animal(
     animalType VARCHAR,
     health VARCHAR,
     id INT,
-    createdBy VARCHAR,
-    createdDate DATETIME,
+    createdBy VARCHAR\q
+
 );
 
 CREATE TABLE sightings (

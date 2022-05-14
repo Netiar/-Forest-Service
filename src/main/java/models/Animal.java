@@ -9,6 +9,23 @@ public class Animal  {
     private String age;
     private String health;
 
+    public Animal(String animalName) {
+        this.animalName = animalName;
+    }
+
+    public static Object addAnimal() {
+        return null;
+    }
+
+    public static Object getAnimals() {
+        return null;
+    }
+
+    public static int findAnimalById(int animalId) {
+        return animalId;
+    }
+
+
     public String getCreatedBy() {
         return createdBy;
     }
