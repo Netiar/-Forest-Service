@@ -9,7 +9,8 @@ import java.util.List;
 
 public class sql2oAnimalDao implements AnimalDao{
 
-    private final Sql2o sql2o;
+
+    public Sql2o sql2o;
 
     public void getDrivers(){
         try{
@@ -32,7 +33,7 @@ public class sql2oAnimalDao implements AnimalDao{
         }
     }
 
-    @Override
+
     public void addAnimal(Animal animal) {
         getDrivers();
         String sql = "INSERT INTO animal(animalName, animalType, age, health, createdBy, createdAt ) VALUES (:animalName, :Age, :animalType, :health, :createdBy, :createdAt)";
@@ -48,7 +49,7 @@ public class sql2oAnimalDao implements AnimalDao{
 
     }
 
-    @Override
+
     public Animal findAnimalById(int id) {
         getDrivers();
         try(Connection con = sql2o.open()) {
@@ -58,7 +59,7 @@ public class sql2oAnimalDao implements AnimalDao{
         }
     }
 
-    @Override
+
     public void deleteAnimalById(int id) {
         getDrivers();
         String sql = "DELETE FROM animals WHERE id -:id";
@@ -71,7 +72,7 @@ public class sql2oAnimalDao implements AnimalDao{
         }
     }
 
-    @Override
+
     public void deleteAllAnimals() {
         getDrivers();
         String sql = "DELETE FROM animal";
@@ -83,7 +84,7 @@ public class sql2oAnimalDao implements AnimalDao{
         }
     }
 
-    @Override
+
     public void updateAnimal(Animal animal) {
         getDrivers();
         String sql = "UPDATE FROM animals";

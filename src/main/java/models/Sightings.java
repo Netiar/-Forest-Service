@@ -1,5 +1,6 @@
 package models;
 
+import java.awt.*;
 import java.util.Objects;
 
 public class Sightings {
@@ -8,6 +9,13 @@ public class Sightings {
     private String location;
     private String rangerName;
     private Integer date;
+
+    public static void newSightings(int animal, String rangerName, String location, String health, String age) {
+    }
+
+    public static List getAll() {
+        return null;
+    }
 
 
     public int getCreatedBy() {
@@ -67,6 +75,9 @@ public class Sightings {
 
 
     public void setId(int id) {
+    }
+
+    public void save() {
     }
 }
 

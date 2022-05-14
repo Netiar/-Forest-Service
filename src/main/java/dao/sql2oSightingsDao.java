@@ -9,6 +9,7 @@ import java.util.List;
 
 public class sql2oSightingsDao implements SightingsDao {
 
+
     private final Sql2o sql2o;
 
     public void getDrivers(){
@@ -24,7 +25,7 @@ public class sql2oSightingsDao implements SightingsDao {
     }
 
 
-    @Override
+
     public List<Sightings> getAllSightings() {
         getDrivers();
         String sql = "SELECT * FROM sightings WHERE id = :id";
@@ -50,7 +51,7 @@ public class sql2oSightingsDao implements SightingsDao {
         return (List<Sightings>) sightings;
     }
 
-    @Override
+
     public Sightings findSightingsById(int id) {
         getDrivers();
         String sql = "SELECT * FROM sightings WHERE  id = :id";
@@ -101,7 +102,7 @@ public class sql2oSightingsDao implements SightingsDao {
         }
     }
 
-    @Override
+
     public void deleteSightingsById(String id) {
         String sql = "DELETE FROM sightings WHERE id = :id";
         try(Connection conn = sql2o.open()){
