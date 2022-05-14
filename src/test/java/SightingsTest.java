@@ -34,8 +34,4 @@ public class SightingsTest {
         assertEquals("netiar", sightings.getRangerName());
     }
 
-
-
-
-
 }
