@@ -17,6 +17,7 @@ ProcessBuilder processBuilder = new ProcessBuilder();
     return 4567;
 }
     public static void main(String[] args) {
+
         port(getHerokuAssignedPort());
         staticFileLocation("/public");
 
@@ -56,7 +57,7 @@ ProcessBuilder processBuilder = new ProcessBuilder();
                 Sightings newSightings = new Sightings(animalId, rangerName, location, health, 3 / 31 / 2019);
                 newSightings.save();
             };
-//            response.redirect("/Sightings");
+            response.redirect("/Sightings");
             return null;
 
 
