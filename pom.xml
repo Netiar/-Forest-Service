@@ -54,8 +54,7 @@
                 <version>3.3.0</version>
                 <executions>
                     <execution>
-                        <id>deploy-jar-file</id>
-                        <phase>deploy</phase>
+                        <phase>package</phase>
                         <goals>
                             <goal>single</goal>
                         </goals>
@@ -82,7 +81,7 @@
                     <!-- Change this to YOUR application name! -->
                     <appName>forestservice1</appName>
                     <processTypes>
-                        <web>java -jar-target/forestservice1-1.0-jar-with-dependencies.jar</web>
+                        <web>java -jar target/forestservice1-1.0-jar-with-dependencies.jar</web>
                     </processTypes>
                 </configuration>
             </plugin>
