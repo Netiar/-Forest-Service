@@ -25,10 +25,10 @@ tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
 }
 
-application {
-    mainModule = 'com.example.forestservice'
-    mainClass = 'com.example.forestservice.HelloApplication'
-}
+//application {
+//    mainModule = 'com.example.forestservice'
+//    mainClass = 'com.example.forestservice.HelloApplication'
+//}
 
 javafx {
     version = '11.0.2'

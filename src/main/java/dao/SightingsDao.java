@@ -22,7 +22,7 @@ public interface SightingsDao {
 
 
     //create
-    List<Sightings> addSightings(Sightings sightings);
+    void addSightings(Sightings sightings);
 
     //find by id
     static Sightings findSightingsById(int id) {

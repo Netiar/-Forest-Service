@@ -1,10 +1,14 @@
+import dao.DB;
+import dao.sql2oAnimalDao;
+import dao.sql2oSightingsDao;
 import models.Animal;
 import models.Sightings;
 import spark.ModelAndView;
 import spark.template.handlebars.HandlebarsTemplateEngine;
 
-import java.awt.*;
+
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import static spark.Spark.*;
@@ -35,7 +39,9 @@ ProcessBuilder processBuilder = new ProcessBuilder();
 
         post("/create/animal/new", (request, response) -> {
             Map<String, Object> model= new HashMap<>();
+
             int id = Integer.parseInt(request.queryParams("id"));
+
             String animalName = request.queryParams("animalName");
             String animalType = request.queryParams("animalType");
             String age = request.queryParams("age");
@@ -49,15 +55,14 @@ ProcessBuilder processBuilder = new ProcessBuilder();
             String date = request.queryParams("date");
 
 
-            String type = new String();
-            if (type.equals("animal")) {
+
                 Animal animal = new Animal(animalName, animalType, age, health, createdBy, date);
-                animal.save();
-            } else if (type.equals("sightings")) {
+                new sql2oAnimalDao(DB.sql2o).addAnimal(animal);
+
                 Sightings newSightings = new Sightings(animalId, rangerName, location, health, 3 / 31 / 2019);
-                newSightings.save();
-            };
-            response.redirect("/Sightings");
+              new sql2oSightingsDao(DB.sql2o).addSightings(newSightings);
+
+            response.redirect("/sightings");
             return null;
 
 
@@ -65,7 +70,8 @@ ProcessBuilder processBuilder = new ProcessBuilder();
 
         get("/sightings", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
-            List Sightings = models.Sightings.getAll();
+
+            List Sightings = new sql2oSightingsDao(DB.sql2o).getAllSightings();
             model.put("sightings", Sightings);
             return new ModelAndView(model, "sightings.hbs");
         }, new HandlebarsTemplateEngine());

@@ -10,17 +10,18 @@
             <th scope="col">Animal Name</th>
             <th scope="col">Animal Type</th>
             <th scope="col">Age</th>
-            <th scope="col">Health/th>
-            <th scope="col">Last Seen</th>
-        </tr>
+            <th scope="col">Health>
+
         </thead>
         <tbody>
         {{#each sightings}}
             <tr>
-                <td>{{rangerName}}</td>
-                <td>{{animalId}}</td>
-                <td>{{location}}</td>
+                <td>{{id}}</td>
                 <td>{{EndangeredAnimal}}</td>
+                <td>{{location}}</td>
+                <td>{{rangerName}}</td>
+
+
 
             </tr>
         {{/each}}

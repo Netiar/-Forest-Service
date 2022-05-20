@@ -4,7 +4,12 @@ import java.awt.*;
 import java.util.Objects;
 
 public class Sightings {
-    private int animalId;
+//    CREATE TABLE sightings (
+//            id serial PRIMARY KEY,
+//            endangeredAnimal VARCHAR,
+//            location VARCHAR,
+//            rangerName VARCHAR
+    private int id;
     private String endangeredAnimal;
     private String location;
     private String rangerName;
@@ -31,7 +36,7 @@ public class Sightings {
     private int createdAt;
 
     public Sightings(Integer animalId, String endangeredAnimal, String location, String rangerName, int createdAt) {
-        this.animalId = animalId;
+        this.id = animalId;
         this.endangeredAnimal = endangeredAnimal;
         this.location = location;
         this.rangerName = rangerName;
@@ -43,16 +48,16 @@ public class Sightings {
         if (this == o) return true;
         if( o == null || getClass() != o.getClass()) return false;
         Sightings sightings = (Sightings)  o;
-        return animalId == sightings.animalId && Objects.equals(endangeredAnimal, sightings.endangeredAnimal) && Objects.equals(location, sightings.location) && Objects.equals(rangerName, sightings.rangerName) && Objects.equals(createdAt, sightings.createdAt);
+        return id == sightings.id && Objects.equals(endangeredAnimal, sightings.endangeredAnimal) && Objects.equals(location, sightings.location) && Objects.equals(rangerName, sightings.rangerName) && Objects.equals(createdAt, sightings.createdAt);
 
 
     }
 
     @Override
-    public int hashCode() {return Objects.hash(animalId,endangeredAnimal ,location , rangerName, createdAt ); }
+    public int hashCode() {return Objects.hash(id,endangeredAnimal ,location , rangerName, createdAt ); }
 
-    public int getAnimalId() {
-        return animalId;
+    public int getId() {
+        return id;
     }
 
     public String getEndangeredAnimal() {
@@ -77,8 +82,7 @@ public class Sightings {
     public void setId(int id) {
     }
 
-    public void save() {
-    }
+
 }
 
 

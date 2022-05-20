@@ -28,17 +28,21 @@ public class sql2oSightingsDao implements SightingsDao {
 
     public List<Sightings> getAllSightings() {
         getDrivers();
-        String sql = "SELECT * FROM sightings WHERE id = :id";
+        String sql = "SELECT * FROM sightings ";
         try(Connection conn = sql2o.open()){
             return conn.createQuery(sql)
                     .executeAndFetch(Sightings.class);
         }
     }
 
+//            id serial PRIMARY KEY,
+//            endangeredAnimal VARCHAR,
+//            location VARCHAR,
+//            rangerName VARCHAR
     @Override
-    public List<Sightings> addSightings(Sightings sightings) {
+    public void  addSightings(Sightings sightings) {
         getDrivers();
-        String sql = "INSERT INTO sightings (animalId,endangeredAnimal,location, rangerName ) VALUES (:animalId, :endangeredAnimal, :location, :rangerName)";
+        String sql = "INSERT INTO sightings (id,endangeredAnimal,location, rangerName ) VALUES (:id, :endangeredAnimal, :location, :rangerName)";
         try(Connection conn = sql2o.open()){
             int id = (int) conn.createQuery(sql,true)
                     .bind(sightings)
@@ -48,7 +52,7 @@ public class sql2oSightingsDao implements SightingsDao {
         }catch(Sql2oException e){
             System.out.println(e);
         }
-        return (List<Sightings>) sightings;
+
     }
 
 

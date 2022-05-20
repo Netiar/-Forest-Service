@@ -7,7 +7,8 @@ import org.sql2o.Sql2oException;
 
 import java.util.List;
 
-public class sql2oAnimalDao implements AnimalDao{
+public class
+sql2oAnimalDao implements AnimalDao{
 
 
     public Sql2o sql2o;
@@ -33,10 +34,19 @@ public class sql2oAnimalDao implements AnimalDao{
         }
     }
 
+//    CREATE TABLE animal(
+//            id Serial PRIMARY KEY,
+//            animalName VARCHAR,
+//            animalType VARCHAR,
+//            age VARCHAR,
+//            health VARCHAR
+//
+//    );
+
 
     public void addAnimal(Animal animal) {
         getDrivers();
-        String sql = "INSERT INTO animal(animalName, animalType, age, health, createdBy, createdAt ) VALUES (:animalName, :Age, :animalType, :health, :createdBy, :createdAt)";
+        String sql = "INSERT INTO animal(animalName, animalType, age, health ) VALUES (:animalName, :Age, :animalType, :health)";
         try(Connection con = sql2o.open()){
             int id = (int) con.createQuery(sql, true)
                     .bind(animal)
